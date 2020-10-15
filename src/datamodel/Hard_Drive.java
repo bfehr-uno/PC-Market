@@ -15,6 +15,12 @@ public class Hard_Drive {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
+	
+	@Column(name = "Manufacturer")
+	private String manufacturer;
+	
+	@Column(name = "Model_Name")
+	private String modelName; 
 
 	@Column(name = "Storage_Space")
 	private String storageSpace;
@@ -25,13 +31,17 @@ public class Hard_Drive {
 	public Hard_Drive() {
 	}
 
-	public Hard_Drive(Integer id, String storage, String rpm) {
+	public Hard_Drive(Integer id, String manufacturer, String modelNa, String storage, String rpm) {
 		this.id = id;
+		this.manufacturer = manufacturer;
+		this.modelName = modelNa;
 		this.storageSpace = storage;
 		this.rotationsPerMinute = rpm;
 	}
 
-	public Hard_Drive(String storage, String rpm) {
+	public Hard_Drive(String manufacturer, String modelNa, String storage, String rpm) {
+		this.manufacturer = manufacturer;
+		this.modelName = modelNa;
 		this.storageSpace = storage;
 		this.rotationsPerMinute = rpm;
 	}
@@ -44,6 +54,22 @@ public class Hard_Drive {
 		this.id = id;
 	}
 
+	public String getManufacturer() {
+		return Manufacturer;
+	}
+	
+	public void setManufacturer(String manufacturer) {
+		this.manufacturer = manufacturer;
+	}
+
+	public String getModelName() {
+		return modelName;
+	}
+	
+	public void setModelName(String modelNa) {
+		this.modelName = modelNa;
+	}
+	
 	public String getStorageSpace() {
 		return storageSpace;
 	}
@@ -62,6 +88,6 @@ public class Hard_Drive {
 
 	@Override
 	public String toString() {
-		return "Motherboard:" + this.id + ", " + this.storageSpace + ", " + this.rotationsPerMinute;
+		return "Motherboard:" + this.id + ", " + this.manufacturer + ", " + this.modelName + ", " + this.storageSpace + ", " + this.rotationsPerMinute;
 	}
 }
