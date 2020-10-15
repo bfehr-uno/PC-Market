@@ -42,17 +42,18 @@ public class DisplayServlet extends HttpServlet {
     		ArrayList<Hard_Drive> hds = new ArrayList<Hard_Drive>();
     		ArrayList<Motherboard> mobos = new ArrayList<Motherboard>();
     		
-    		cpus.add(new CPU(1, "4", "4mb", "LGA"));
-    		cpus.add(new CPU(2, "8", "4mb", "PGA"));
-    		cpus.add(new CPU(3, "8", "8mb", "LGA"));
+    		cpus.add(new CPU(1, "Intel", "Core i7-9700K", "8-Core", "4.9 GHz", "LGA 1151 (300 Series)", "$250"));
+    		cpus.add(new CPU(2, "AMD", "Ryzen 7 3800XT", "8-Core", "4.7 GHz", "Socket AM4", "$350"));
+    		cpus.add(new CPU(3, "Intel", "Core i9-9900K", "8-Core", "5.0 GHz", "LGA 1151 (300 Series)", "$350"));
+
     		
-    		hds.add(new Hard_Drive(1, "500gb", "5400"));
-    		hds.add(new Hard_Drive(2, "1tb", "7200"));
-    		hds.add(new Hard_Drive(3, "750gb", "6400"));
+    		hds.add(new Hard_Drive(1, "Samsung", "ST2000DL004", "2TB", "5400 RPM", "$250" ));
+    		hds.add(new Hard_Drive(2, "Samsung", "HD154UI", "1.5TB", "7200 RPM", "$60"));
+    		hds.add(new Hard_Drive(3, "Water Panther", "WPC101200GSAS-G7", "1.2TB", "10000 RPM", "$75"));
     		
-    		mobos.add(new Motherboard(1, "PGA", "Standard-ATX"));
-    		mobos.add(new Motherboard(2, "LGA", "Micro-ATX"));
-    		mobos.add(new Motherboard(3, "PGA", "Mini-ITX"));
+    		mobos.add(new Motherboard(1, "MSI" "MPG Z490 GAMING EDGE WIFI", "LGA 1200", "ATX", "$180"));
+    		mobos.add(new Motherboard(2, "ASUS", "STRIX Z490-E GAMING", "LGA 1200", "ATX", "$225"));
+    		mobos.add(new Motherboard(3, "GIGABYTE", "Z390 AORUS PRO WIFI", "LGA 1151 (300 Series)", "ATX", "$125"));
     		
     		request.setAttribute("cpus", cpus);
     		request.setAttribute("hds", hds);
