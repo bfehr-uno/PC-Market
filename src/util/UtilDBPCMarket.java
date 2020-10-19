@@ -12,6 +12,7 @@ import org.hibernate.cfg.Configuration;
 
 import datamodel.Motherboard;
 import datamodel.CPU;
+import datamodel.GPU;
 import datamodel.Hard_Drive;
 
 import org.hibernate.HibernateException;
