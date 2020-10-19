@@ -110,7 +110,7 @@
 				<td><%=m.getModelName()%></td> 
 				<td><%=m.getSocket()%></td> 
 				<td><%=m.getExpansionSlots()%></td>
-				<td><%=m.getForm()%></td>  
+				<td><%=m.getFormFactor()%></td>  
 			</tr> 
 			<%}%>
 		</table>
