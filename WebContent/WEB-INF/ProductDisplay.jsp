@@ -20,7 +20,7 @@
       			<th><b>Manufacturer</b></th>
       			<th><b>Model Name</b></th>
       			<th><b>Number of Cores</b></th>
-      			<th><b>Cache Size</b></th> 
+      			<th><b>Frequency</b></th> 
       			<th><b></b>Socket Type</th>
    			</tr> 
 	         
@@ -34,13 +34,13 @@
 				<td><%=c.getNumOfCores()%></td> 
 				<td><%=c.getFreq()%></td> 
 				<td><%=c.getSocketCompatibility()%></td>
-		    </tr> 
-		    <%}%>
-    	</table>
+			</tr> 
+			<%}%>
+		</table>
         
         <br>
-		<h3 align="center">GPUs</h3> 
-		<table border ="1" width="500" align="center">
+        <h3 align="center">GPUs</h3> 
+        <table border ="1" width="500" align="center">
 			<tr bgcolor="FFFFFF">
 				<th><b>ID</b></th> 
 				<th><b>Manufacturer</b></th> 
