@@ -55,7 +55,7 @@ public class Hard_Drive {
 	}
 
 	public String getManufacturer() {
-		return Manufacturer;
+		return manufacturer;
 	}
 	
 	public void setManufacturer(String manufacturer) {
@@ -88,6 +88,8 @@ public class Hard_Drive {
 
 	@Override
 	public String toString() {
-		return "Motherboard:" + this.id + ", " + this.manufacturer + ", " + this.modelName + ", " + this.storageSpace + ", " + this.rotationsPerMinute;
+		return "Hard Drive:" + this.id + ", " + this.manufacturer + ", " +
+				this.modelName + ", " + this.storageSpace + ", " + 
+				this.rotationsPerMinute;
 	}
 }

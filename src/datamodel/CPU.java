@@ -59,7 +59,7 @@ public class CPU {
 	}
 	
 	public String getManufacturer() {
-		return Manufacturer;
+		return manufacturer;
 	}
 	
 	public void setManufacturer(String manufacturer) {
@@ -101,6 +101,8 @@ public class CPU {
 
 	@Override
 	public String toString() {
-		return "CPU(s):" + this.id + ", " + this.Manufacturer + ", " + this.ModelName + ", " +  this.numOfCores  + ", " + this.frequency + ", " + this.socketCompatibility;
+		return "CPU(s):" + this.id + ", " + this.manufacturer + ", " + 
+			   this.ModelName + ", " +  this.numOfCores  + ", " + 
+			   this.frequency + ", " + this.socketCompatibility;
 	}
 }

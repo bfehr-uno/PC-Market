@@ -23,23 +23,28 @@ public class Motherboard {
 
    @Column(name = "Socket_Type")
    private String socketType;
+   
+   @Column(name = "Expansion_Slots")
+   private String expansionSlots;
 
    @Column(name = "Form_Factor")
    private String formFactor;
 
-   public Motherboard(Integer id, String manufacturer, String modelNa, String socket, String form) {
+   public Motherboard(Integer id, String manufacturer, String modelNa, String socket, String expansion, String form) {
       this.id = id;
       this.manufacturer = manufacturer;
       this.modelName = modelNa;
       this.socketType = socket;
+      this.expansionSlots = expansion;
       this.formFactor = form;
    }
 
-   public Motherboard(String manufacturer, String modelNa, String socketType, String formFactor) {
+   public Motherboard(String manufacturer, String modelNa, String socket, String expansion, String form) {
 	  this.manufacturer = manufacturer;
 	  this.modelName = modelNa;
-      this.socketType = socketType;
-      this.formFactor = formFactor;
+      this.socketType = socket;
+      this.expansionSlots = expansion;
+      this.formFactor = form;
    }
 
    public Integer getId() {
@@ -51,7 +56,7 @@ public class Motherboard {
    }
    
 	public String getManufacturer() {
-		return Manufacturer;
+		return manufacturer;
 	}
 	
 	public void setManufacturer(String manufacturer) {
@@ -73,17 +78,27 @@ public class Motherboard {
    public void setSocket(String socket) {
       this.socketType = socket;
    }
+   
+   public Integer getExpansionSlots() {
+	   return expansionSlots;
+   }
+   
+   public void setExpansionSlots(Integer expansion) {
+	   this.expansionSlots = expansion;
+   }
 
-   public String getForm() {
+   public String getFormFactor() {
       return formFactor;
    }
 
-   public void setForm(String form) {
+   public void setFormFactor(String form) {
       this.formFactor = form;
    }
 
    @Override
    public String toString() {
-      return "Motherboard:" + this.id + ", " + this.manufacturer + ", " + this.modelName + ", " + this.socketType + ", " + this.formFactor;
+      return "Motherboard:" + this.id + ", " + this.manufacturer + ", " +
+    		 this.modelName + ", " + this.socketType + ", " + 
+    		 this.expansionSlots + ", " + this.formFactor;
    }
 }
