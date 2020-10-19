@@ -40,7 +40,7 @@ public class DisplayServlet extends HttpServlet {
     	    out.println("<body>");
     	    
     		ArrayList<CPU> cpus = new ArrayList<CPU>();
-    		ArrayList<Hard_Drive> gpus = new ArrayList<Hard_Drive>();
+    		ArrayList<GPU> gpus = new ArrayList<GPU>();
     		ArrayList<Hard_Drive> hds = new ArrayList<Hard_Drive>();
     		ArrayList<Motherboard> mobos = new ArrayList<Motherboard>();
     		
