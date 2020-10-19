@@ -56,9 +56,9 @@ public class DisplayServlet extends HttpServlet {
 				hds.add(new Hard_Drive(2, "Samsung", "HD154UI", "1.5TB", "7200 RPM")); //$60
 				hds.add(new Hard_Drive(3, "Water Panther", "WPC101200GSAS-G7", "1.2TB", "10000 RPM")); //$75
 				
-				mobos.add(new Motherboard(1, "MSI", "MPG Z490 GAMING EDGE WIFI", "LGA 1200", "ATX", "2 x PCI Express 3.0 x16")); //$180
-				mobos.add(new Motherboard(2, "ASUS", "STRIX Z490-E GAMING", "LGA 1200", "ATX", "2 x PCIe 3.0 x16 (x16 or dual x8)")); //$225
-				mobos.add(new Motherboard(3, "GIGABYTE", "Z390 AORUS PRO WIFI", "LGA 1151 (300 Series)", "ATX", "1 x PCI Express x16 slot, running at x16 (PCIEX16)")); //$125
+				mobos.add(new Motherboard(1, "MSI", "MPG Z490 GAMING EDGE WIFI", "LGA 1200", "2 x PCI Express 3.0 x16", "ATX")); //$180
+				mobos.add(new Motherboard(2, "ASUS", "STRIX Z490-E GAMING", "LGA 1200", "2 x PCIe 3.0 x16 (x16 or dual x8)", "ATX")); //$225
+				mobos.add(new Motherboard(3, "GIGABYTE", "Z390 AORUS PRO WIFI", "LGA 1151 (300 Series)", "1 x PCI Express x16 slot, running at x16 (PCIEX16)", "ATX")); //$125
 				
 				request.setAttribute("cpus", cpus);
 				request.setAttribute("gpus", gpus);
