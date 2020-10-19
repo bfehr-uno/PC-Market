@@ -29,7 +29,7 @@ public class GPU {
 	@Column(name = "Memory_Size")
 	private String memorySize;
 	
-	public GPU(Integer id, String manufacturer, String modelNa, String port, String interfaceType, String memory) {
+	public GPU(Integer id, String manufacturer, String modelNa, String port, String interf, String memory) {
 		this.id = id;
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
@@ -38,7 +38,7 @@ public class GPU {
 		this.memorySize = memory;
 	}
 	
-	public GPU(String manufacturer, String modelNa, String port, String interfaceType, String memory) {
+	public GPU(String manufacturer, String modelNa, String port, String interf, String memory) {
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.portType = port;
@@ -78,11 +78,11 @@ public class GPU {
 		this.portType = port;
 	}
 	
-	public Integer getInterfaceType() {
+	public String getInterfaceType() {
 		return interfaceType;
 	}
 	
-	public void setInterfaceType(Integer interf) {
+	public void setInterfaceType(String interf) {
 		this.interfaceType = interf;
 	}
 	

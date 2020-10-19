@@ -74,7 +74,7 @@ public class CPU {
 		this.modelName = modelNa;
 	}
 	
-	public String getnumOfCores() {
+	public String getNumOfCores() {
 		return numOfCores;
 	}
 
@@ -90,7 +90,7 @@ public class CPU {
 		this.frequency = freq;
 	}
 	
-	public String getsocketCompatibility() {
+	public String getSocketCompatibility() {
 		return socketCompatibility;
 	}
 
@@ -102,7 +102,7 @@ public class CPU {
 	@Override
 	public String toString() {
 		return "CPU(s):" + this.id + ", " + this.manufacturer + ", " + 
-			   this.ModelName + ", " +  this.numOfCores  + ", " + 
+			   this.modelName + ", " +  this.numOfCores  + ", " + 
 			   this.frequency + ", " + this.socketCompatibility;
 	}
 }

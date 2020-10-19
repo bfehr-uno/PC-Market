@@ -78,11 +78,11 @@ public class Motherboard {
 		this.socketType = socket;
 	}
 	
-	public Integer getExpansionSlots() {
+	public String getExpansionSlots() {
 		return expansionSlots;
 	}
 	
-	public void setExpansionSlots(Integer expansion) {
+	public void setExpansionSlots(String expansion) {
 		this.expansionSlots = expansion;
 	}
 	
