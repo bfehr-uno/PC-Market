@@ -46,7 +46,7 @@
 				<th><b>Manufacturer</b></th> 
 				<th><b>Model Name</b></th> 
 				<th><b></b>Port Type</th> 
-				<th><b></b>Interface</th>
+				<th><b></b>Interface Type</th>
 				<th><b></b>Memory Size</th>
 			</tr> 
 		   
@@ -58,7 +58,7 @@
 				<td><%=g.getManufacturer()%></td> 
 				<td><%=g.getModelName()%></td> 
 				<td><%=g.getPortType()%></td>
-				<td><%=g.interfaceType()%></td> 
+				<td><%=g.getInterfaceType()%></td> 
 				<td><%=g.getMemorySize()%></td> 
 			</tr> 
 			<%}%> 
