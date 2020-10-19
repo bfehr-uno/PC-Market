@@ -39,23 +39,28 @@ public class DisplayServlet extends HttpServlet {
     	    out.println("<body>");
     	    
     		ArrayList<CPU> cpus = new ArrayList<CPU>();
+    		ArrayList<Hard_Drive> gpus = new ArrayList<Hard_Drive>();
     		ArrayList<Hard_Drive> hds = new ArrayList<Hard_Drive>();
     		ArrayList<Motherboard> mobos = new ArrayList<Motherboard>();
     		
-    		cpus.add(new CPU(1, "Intel", "Core i7-9700K", "8-Core", "4.9 GHz", "LGA 1151 (300 Series)", "$250"));
-    		cpus.add(new CPU(2, "AMD", "Ryzen 7 3800XT", "8-Core", "4.7 GHz", "Socket AM4", "$350"));
-    		cpus.add(new CPU(3, "Intel", "Core i9-9900K", "8-Core", "5.0 GHz", "LGA 1151 (300 Series)", "$350"));
+    		cpus.add(new CPU(1, "Intel", "Core i7-9700K", "8-Core", "4.9 GHz", "LGA 1151 (300 Series)")); //$250
+    		cpus.add(new CPU(2, "AMD", "Ryzen 7 3800XT", "8-Core", "4.7 GHz", "Socket AM4")); //$350
+    		cpus.add(new CPU(3, "Intel", "Core i9-9900K", "8-Core", "5.0 GHz", "LGA 1151 (300 Series)")); //$350
 
+    		gpus.add(new GPU(1, "MSI", "RTX 2080 Super Gaming X TRIO", "1 x HDMI 2.0b 3 x DisplayPort 1.4", "PCI Express 3.0 x16", "8GB")); //$1000
+    		gpus.add(new GPU(2, "GIGABYTE", "GV-N2060OC-6GD ver 2.0", "1 x HDMI 2.0b 3 x DisplayPort 1.4", "PCI Express 3.0 x16", "6GB")); //$280
+    		gpus.add(new GPU(3, "MSI", "RX 5700 XT GAMING X", "1 x HDMI 2.0b 3 x DisplayPort 1.4", "PCI Express 4.0", "8GB")); //$350
     		
-    		hds.add(new Hard_Drive(1, "Samsung", "ST2000DL004", "2TB", "5400 RPM", "$250" ));
-    		hds.add(new Hard_Drive(2, "Samsung", "HD154UI", "1.5TB", "7200 RPM", "$60"));
-    		hds.add(new Hard_Drive(3, "Water Panther", "WPC101200GSAS-G7", "1.2TB", "10000 RPM", "$75"));
+    		hds.add(new Hard_Drive(1, "Samsung", "ST2000DL004", "2TB", "5400 RPM")); //$250
+    		hds.add(new Hard_Drive(2, "Samsung", "HD154UI", "1.5TB", "7200 RPM")); //$60
+    		hds.add(new Hard_Drive(3, "Water Panther", "WPC101200GSAS-G7", "1.2TB", "10000 RPM")); //$75
     		
-    		mobos.add(new Motherboard(1, "MSI" "MPG Z490 GAMING EDGE WIFI", "LGA 1200", "ATX", "$180"));
-    		mobos.add(new Motherboard(2, "ASUS", "STRIX Z490-E GAMING", "LGA 1200", "ATX", "$225"));
-    		mobos.add(new Motherboard(3, "GIGABYTE", "Z390 AORUS PRO WIFI", "LGA 1151 (300 Series)", "ATX", "$125"));
+    		mobos.add(new Motherboard(1, "MSI", "MPG Z490 GAMING EDGE WIFI", "LGA 1200", "ATX", "2 x PCI Express 3.0 x16")); //$180
+    		mobos.add(new Motherboard(2, "ASUS", "STRIX Z490-E GAMING", "LGA 1200", "ATX", "2 x PCIe 3.0 x16 (x16 or dual x8)")); //$225
+    		mobos.add(new Motherboard(3, "GIGABYTE", "Z390 AORUS PRO WIFI", "LGA 1151 (300 Series)", "ATX", "1 x PCI Express x16 slot, running at x16 (PCIEX16)")); //$125
     		
     		request.setAttribute("cpus", cpus);
+    		request.setAttribute("gpus", gpus);
     		request.setAttribute("hds", hds);
     		request.setAttribute("mobos", mobos);
 		
