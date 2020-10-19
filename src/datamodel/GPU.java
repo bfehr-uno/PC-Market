@@ -23,7 +23,7 @@ public class GPU {
 	@Column(name = "Port_Type")
 	private String portType;
 	
-	@Column(name = "interfaceType")
+	@Column(name = "Interface_Type")
 	private String interfaceType;
 	
 	@Column(name = "Memory_Size")
@@ -78,11 +78,11 @@ public class GPU {
 		this.portType = port;
 	}
 	
-	public Integer getinterfaceType() {
+	public Integer getInterfaceType() {
 		return interfaceType;
 	}
 	
-	public void setinterfaceType(Integer interf) {
+	public void setInterfaceType(Integer interf) {
 		this.interfaceType = interf;
 	}
 	
