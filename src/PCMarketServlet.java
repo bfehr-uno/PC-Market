@@ -41,37 +41,37 @@ public class PCMarketServlet extends HttpServlet {
       List<Motherboard> listMobos = UtilDBPCMarket.listMotherboard();
       for (Motherboard mobos : listMobos) {
           System.out.println("<li>" + mobos.getId() + ", " //
-        	   + mobos.getManufacturer() + ", " //
-               + mobos.getModelName() + ", " //
-               + mobos.getSocket() + ", " //
-               + mobos.getExpansionSlots() + ", " //
-               + mobos.getForm() + "</li>");
+        		  + mobos.getManufacturer() + ", " //
+        		  + mobos.getModelName() + ", " //
+        		  + mobos.getSocket() + ", " //
+        		  + mobos.getExpansionSlots() + ", " //
+        		  + mobos.getForm() + "</li>");
       }
       List<CPU> listCPUs = UtilDBPCMarket.listCPU();
       for (CPU cpus : listCPUs) {
           System.out.println("<li>" + cpus.getId() + ", " //
-           	   + cpus.getManufacturer() + ", " //
-               + cpus.getModelName() + ", " //
-               + cpus.getNumOfCores() + ", " //
-               + cpus.getFreq() + ", " //
-               + cpus.getSocketCompatibility() + "</li>");
+        		  + cpus.getManufacturer() + ", " //
+        		  + cpus.getModelName() + ", " //
+        		  + cpus.getNumOfCores() + ", " //
+        		  + cpus.getFreq() + ", " //
+        		  + cpus.getSocketCompatibility() + "</li>");
       }
       List<GPU> listGPUs = UtilDBPCMarket.listGPU();
       for (GPU gpus : listGPUs) {
           System.out.println("<li>" + gpus.getId() + ", " //
-           	   + gpus.getManufacturer() + ", " //
-               + gpus.getModelName() + ", " //
-               + gpus.getPortType() + ", " //
-               + gpus.getInterface() + ", " //
-               + gpus.getMemorySize() + "</li>");
+        		  + gpus.getManufacturer() + ", " //
+        		  + gpus.getModelName() + ", " //
+        		  + gpus.getPortType() + ", " //
+        		  + gpus.getInterface() + ", " //
+        		  + gpus.getMemorySize() + "</li>");
       }
       List<Hard_Drive> listDrives = UtilDBPCMarket.listHardDrive();
       for (Hard_Drive drives : listDrives) {
           System.out.println("<li>" + drives.getId() + ", " //
-           	   + drives.getManufacturer() + ", " //
-               + drives.getModelName() + ", " //
-               + drives.getStorageSpace() + ", " //
-               + drives.getRotationsPerMinute() + "</li>");
+        		  + drives.getManufacturer() + ", " //
+        		  + drives.getModelName() + ", " //
+        		  + drives.getStorageSpace() + ", " //
+        		  + drives.getRotationsPerMinute() + "</li>");
       }
       out.println("</ul>");
       out.println("</body></html>");
