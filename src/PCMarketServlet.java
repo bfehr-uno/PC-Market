@@ -45,7 +45,7 @@ public class PCMarketServlet extends HttpServlet {
         		  + mobos.getModelName() + ", " //
         		  + mobos.getSocket() + ", " //
         		  + mobos.getExpansionSlots() + ", " //
-        		  + mobos.getForm() + "</li>");
+        		  + mobos.getFormFactor() + "</li>");
       }
       List<CPU> listCPUs = UtilDBPCMarket.listCPU();
       for (CPU cpus : listCPUs) {
