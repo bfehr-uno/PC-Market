@@ -82,6 +82,30 @@ public class UtilDBPCMarket {
 		}
 		return resultList;
 	}
+	
+	public static List<GPU> listGPU() {
+		List<GPU> resultList = new ArrayList<GPU>();
+
+		Session session = getSessionFactory().openSession();
+		Transaction tx = null;
+
+		try {
+			tx = session.beginTransaction();
+			List<?> GPU = session.createQuery("FROM GPU").list();
+			for (Iterator<?> iterator = GPU.iterator(); iterator.hasNext();) {
+				GPU gpu = (GPU) iterator.next();
+				resultList.add(gpu);
+			}
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return resultList;
+	}
 
 	public static List<Hard_Drive> listHardDrive() {
 		List<Hard_Drive> resultList = new ArrayList<Hard_Drive>();
