@@ -62,7 +62,7 @@ public class PCMarketServlet extends HttpServlet {
         		  + gpus.getManufacturer() + ", " //
         		  + gpus.getModelName() + ", " //
         		  + gpus.getPortType() + ", " //
-        		  + gpus.interfaceType() + ", " //
+        		  + gpus.getInterfaceType() + ", " //
         		  + gpus.getMemorySize() + "</li>");
       }
       List<Hard_Drive> listDrives = UtilDBPCMarket.listHardDrive();
