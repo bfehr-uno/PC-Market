@@ -21,7 +21,8 @@
       			<th><b>Model Name</b></th>
       			<th><b>Number of Cores</b></th>
       			<th><b>Frequency</b></th> 
-      			<th><b></b>Socket Type</th>
+      			<th><b>Socket Type</b></th>
+      			<th><b>Price</b></th>
    			</tr> 
 	         
 			<%ArrayList<CPU> cpu =  (ArrayList<CPU>)request.getAttribute("cpus");
@@ -34,6 +35,7 @@
 				<td><%=c.getNumOfCores()%></td> 
 				<td><%=c.getFreq()%></td> 
 				<td><%=c.getSocketCompatibility()%></td>
+				<td><%=c.getPrice()%></td>
 			</tr> 
 			<%}%>
 		</table>
@@ -45,9 +47,10 @@
 				<th><b>ID</b></th> 
 				<th><b>Manufacturer</b></th> 
 				<th><b>Model Name</b></th> 
-				<th><b></b>Port Type</th> 
-				<th><b></b>Interface Type</th>
-				<th><b></b>Memory Size</th>
+				<th><b>Port Type</b></th> 
+				<th><b>Interface Type</b></th>
+				<th><b>Memory Size</b></th>
+				<th><b>Price</b></th>
 			</tr> 
 		   
 			<%ArrayList<GPU> gpu =  (ArrayList<GPU>)request.getAttribute("gpus");
@@ -59,7 +62,8 @@
 				<td><%=g.getModelName()%></td> 
 				<td><%=g.getPortType()%></td>
 				<td><%=g.getInterfaceType()%></td> 
-				<td><%=g.getMemorySize()%></td> 
+				<td><%=g.getMemorySize()%></td>
+				<td><%=g.getPrice()%></td>
 			</tr> 
 			<%}%> 
 		</table>
@@ -73,6 +77,7 @@
 				<th><b>Model Name</b></th> 
 				<th><b>Storage Size</b></th> 
 				<th><b>RPM</b></th>
+				<th><b>Price</b></th>
 			</tr> 
         
 			<%ArrayList<Hard_Drive> hd =  (ArrayList<Hard_Drive>)request.getAttribute("hds");
@@ -83,7 +88,8 @@
 				<td><%=h.getManufacturer()%></td>
 				<td><%=h.getModelName()%></td> 
 				<td><%=h.getStorageSpace()%></td> 
-				<td><%=h.getRotationsPerMinute()%></td>  
+				<td><%=h.getRotationsPerMinute()%></td>
+				<td><%=h.getPrice()%></td>
 			</tr> 
 			<%}%>
 		</table>
@@ -99,6 +105,7 @@
 				<th><b>Socket Type</b></th> 
 				<th><b>Expansion Slots</b></th>
 				<th><b>Form Factor</b></th>
+				<th><b>Price</b></th>
 			</tr> 
        
        		<%ArrayList<Motherboard> mobo =  (ArrayList<Motherboard>)request.getAttribute("mobos");
@@ -110,7 +117,8 @@
 				<td><%=m.getModelName()%></td> 
 				<td><%=m.getSocket()%></td> 
 				<td><%=m.getExpansionSlots()%></td>
-				<td><%=m.getFormFactor()%></td>  
+				<td><%=m.getFormFactor()%></td>
+				<td><%=m.getPrice()%></td>
 			</tr> 
 			<%}%>
 		</table>
