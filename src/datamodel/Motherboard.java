@@ -29,21 +29,29 @@ public class Motherboard {
 	@Column(name = "Form_Factor")
 	private String formFactor;
 	
-	public Motherboard(Integer id, String manufacturer, String modelNa, String socket, String expansion, String form) {
+	@Column(name = "Price")
+	private String price;
+	
+	public Motherboard() {
+	}
+	
+	public Motherboard(Integer id, String manufacturer, String modelNa, String socket, String expansion, String form, String price) {
 		this.id = id;
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.socketType = socket;
 		this.expansionSlots = expansion;
 		this.formFactor = form;
+		this.price = price;
 	}
 	
-	public Motherboard(String manufacturer, String modelNa, String socket, String expansion, String form) {
+	public Motherboard(String manufacturer, String modelNa, String socket, String expansion, String form, String price) {
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.socketType = socket;
 		this.expansionSlots = expansion;
 		this.formFactor = form;
+		this.price = price;
 	}
 	
 	public Integer getId() {
@@ -94,10 +102,18 @@ public class Motherboard {
 		this.formFactor = form;
 	}
 	
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	
 	@Override
 	public String toString() {
 		return "Motherboard:" + this.id + ", " + this.manufacturer + ", " +
 			   this.modelName + ", " + this.socketType + ", " + 
-			   this.expansionSlots + ", " + this.formFactor;
+			   this.expansionSlots + ", " + this.formFactor + ", " + this.price;
 	}
 }

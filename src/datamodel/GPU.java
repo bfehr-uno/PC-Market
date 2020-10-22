@@ -29,21 +29,29 @@ public class GPU {
 	@Column(name = "Memory_Size")
 	private String memorySize;
 	
-	public GPU(Integer id, String manufacturer, String modelNa, String port, String interf, String memory) {
+	@Column(name = "Price")
+	private String price;
+	
+	public GPU() {
+	}
+	
+	public GPU(Integer id, String manufacturer, String modelNa, String port, String interf, String memory, String price) {
 		this.id = id;
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.portType = port;
 		this.interfaceType = interf;
 		this.memorySize = memory;
+		this.price = price;
 	}
 	
-	public GPU(String manufacturer, String modelNa, String port, String interf, String memory) {
+	public GPU(String manufacturer, String modelNa, String port, String interf, String memory, String price) {
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.portType = port;
 		this.interfaceType = interf;
 		this.memorySize = memory;
+		this.price = price;
 	}
 	
 	public Integer getId() {
@@ -94,10 +102,19 @@ public class GPU {
 		this.memorySize = memory;
 	}
 	
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	
 	@Override
 	public String toString() {
 		return "GPU:" + this.id + ", " + this.manufacturer + ", " +
 			   this.modelName + ", " + this.portType + ", " +
-			   this.interfaceType + ", " + this.memorySize;
+			   this.interfaceType + ", " + this.memorySize + ", " + 
+			   this.price;
 	}
 }

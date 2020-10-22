@@ -29,25 +29,30 @@ public class CPU {
 
 	@Column(name = "Socket_Compatibility")
 	private String socketCompatibility;
+	
+	@Column(name = "Price")
+	private String price;
 
 	public CPU() {
 	}
 
-	public CPU(Integer id, String manufacturer, String modelNa, String cores, String freq, String socketC) {
+	public CPU(Integer id, String manufacturer, String modelNa, String cores, String freq, String socketC, String price) {
 		this.id = id;
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.numOfCores = cores;
 		this.frequency = freq;
 		this.socketCompatibility = socketC;
+		this.price = price;
 	}
 
-	public CPU(String manufacturer, String modelNa, String cores, String freq, String socketC) {
+	public CPU(String manufacturer, String modelNa, String cores, String freq, String socketC, String price) {
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.numOfCores = cores;
 		this.frequency = freq;
 		this.socketCompatibility = socketC;
+		this.price = price;
 	}
 
 	public Integer getId() {
@@ -97,12 +102,20 @@ public class CPU {
 	public void setsocketCompatibility(String socketC) {
 		this.socketCompatibility = socketC;
 	}
+	
+	public String getPrice() {
+		return price;
+	}
 
+	public void setPrice(String price) {
+		this.price = price;
+	}
 
 	@Override
 	public String toString() {
 		return "CPU(s):" + this.id + ", " + this.manufacturer + ", " + 
 			   this.modelName + ", " +  this.numOfCores  + ", " + 
-			   this.frequency + ", " + this.socketCompatibility;
+			   this.frequency + ", " + this.socketCompatibility + ", " + 
+			   this.price;
 	}
 }
