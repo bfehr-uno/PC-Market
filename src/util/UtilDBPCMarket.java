@@ -142,12 +142,8 @@ public class UtilDBPCMarket {
 	      Transaction tx = null;
 	      try {
 	         tx = session.beginTransaction();
-	         session.save(new CPU(manufacturer, 
-					  String modelNa, 
-					  String cores, 
-					  String freq, 
-					  String socketC, 
-					  String price));
+	         session.save(new CPU(manufacturer, modelNa, 
+	        		 			  cores, freq, socketC, price));
 	         tx.commit();
 	      } catch (HibernateException e) {
 	         if (tx != null)
@@ -168,12 +164,8 @@ public class UtilDBPCMarket {
 	      Transaction tx = null;
 	      try {
 	         tx = session.beginTransaction();
-	         session.save(new GPU(String manufacturer, 
-	        		 			  String modelNa, 
-	        		 			  String port, 
-	        		 			  String interf, 
-	        		 			  String memory, 
-	        		 			  String price));
+	         session.save(new GPU(manufacturer, modelNa, 
+	        		 			  port, interf, memory, price));
 	         tx.commit();
 	      } catch (HibernateException e) {
 	         if (tx != null)
@@ -193,11 +185,8 @@ public class UtilDBPCMarket {
 		    Transaction tx = null;
 		    try {
 		       tx = session.beginTransaction();
-		       session.save(new Hard_Drive(String manufacturer, 
-		    		   					   String modelNa, 
-		    		   					   String storage, 
-		    		   					   String rpm, 
-		    		   					   String price));
+		       session.save(new Hard_Drive(manufacturer, modelNa, 
+		    		   					   storage, rpm, price));
 		       tx.commit();
 		    } catch (HibernateException e) {
 		       if (tx != null)
@@ -218,12 +207,8 @@ public class UtilDBPCMarket {
 		      Transaction tx = null;
 		      try {
 		         tx = session.beginTransaction();
-		         session.save(new Motherboard(String manufacturer, 
-		        		 					  String modelNa,
-		        		 					  String socket, 
-		        		 					  String expansion, 
-		        		 					  String form, 
-		        		 					  String price));
+		         session.save(new Motherboard(manufacturer, modelNa, 
+		        		 					  socket, expansion, form, price));
 		         tx.commit();
 		      } catch (HibernateException e) {
 		         if (tx != null)
