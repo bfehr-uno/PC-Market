@@ -35,7 +35,13 @@ public class GPU {
 	public GPU() {
 	}
 	
-	public GPU(Integer id, String manufacturer, String modelNa, String port, String interf, String memory, String price) {
+	public GPU(Integer id, 
+			   String manufacturer, 
+			   String modelNa, 
+			   String port, 
+			   String interf, 
+			   String memory, 
+			   String price) {
 		this.id = id;
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
@@ -45,7 +51,12 @@ public class GPU {
 		this.price = price;
 	}
 	
-	public GPU(String manufacturer, String modelNa, String port, String interf, String memory, String price) {
+	public GPU(String manufacturer, 
+			   String modelNa, 
+			   String port, 
+			   String interf, 
+			   String memory, 
+			   String price) {
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.portType = port;

@@ -34,7 +34,12 @@ public class Hard_Drive {
 	public Hard_Drive() {
 	}
 
-	public Hard_Drive(Integer id, String manufacturer, String modelNa, String storage, String rpm, String price) {
+	public Hard_Drive(Integer id, 
+					  String manufacturer, 
+					  String modelNa, 
+					  String storage, 
+					  String rpm, 
+					  String price) {
 		this.id = id;
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
@@ -43,7 +48,11 @@ public class Hard_Drive {
 		this.price = price;
 	}
 
-	public Hard_Drive(String manufacturer, String modelNa, String storage, String rpm, String price) {
+	public Hard_Drive(String manufacturer, 
+					  String modelNa, 
+					  String storage, 
+					  String rpm, 
+					  String price) {
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.storageSpace = storage;

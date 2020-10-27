@@ -131,5 +131,108 @@ public class UtilDBPCMarket {
 		}
 		return resultList;
 	}
+	
+	public static void createCPUs(String manufacturer, 
+								  String modelNa, 
+								  String cores, 
+								  String freq, 
+								  String socketC, 
+								  String price) {
+	      Session session = getSessionFactory().openSession();
+	      Transaction tx = null;
+	      try {
+	         tx = session.beginTransaction();
+	         session.save(new CPU(manufacturer, 
+					  String modelNa, 
+					  String cores, 
+					  String freq, 
+					  String socketC, 
+					  String price));
+	         tx.commit();
+	      } catch (HibernateException e) {
+	         if (tx != null)
+	            tx.rollback();
+	         e.printStackTrace();
+	      } finally {
+	         session.close();
+	      }
+	   }
+	
+	   public static void createGPUs(String manufacturer, 
+			   						 String modelNa, 
+			   						 String port, 
+			   						 String interf, 
+			   						 String memory, 
+			   						 String price) {
+	      Session session = getSessionFactory().openSession();
+	      Transaction tx = null;
+	      try {
+	         tx = session.beginTransaction();
+	         session.save(new GPU(String manufacturer, 
+	        		 			  String modelNa, 
+	        		 			  String port, 
+	        		 			  String interf, 
+	        		 			  String memory, 
+	        		 			  String price));
+	         tx.commit();
+	      } catch (HibernateException e) {
+	         if (tx != null)
+	            tx.rollback();
+	         e.printStackTrace();
+	      } finally {
+	         session.close();
+	      }
+      }
+		
+		public static void createHard_Drives(String manufacturer, 
+											 String modelNa, 
+											 String storage, 
+											 String rpm, 
+											 String price) {
+		    Session session = getSessionFactory().openSession();
+		    Transaction tx = null;
+		    try {
+		       tx = session.beginTransaction();
+		       session.save(new Hard_Drive(String manufacturer, 
+		    		   					   String modelNa, 
+		    		   					   String storage, 
+		    		   					   String rpm, 
+		    		   					   String price));
+		       tx.commit();
+		    } catch (HibernateException e) {
+		       if (tx != null)
+		          tx.rollback();
+		       e.printStackTrace();
+		    } finally {
+		       session.close();
+		    }
+	    }
+		
+	   public static void createMotherboards(String manufacturer, 
+			   								 String modelNa, 
+			   								 String socket, 
+			   								 String expansion, 
+			   								 String form, 
+			   								 String price) {
+		      Session session = getSessionFactory().openSession();
+		      Transaction tx = null;
+		      try {
+		         tx = session.beginTransaction();
+		         session.save(new Motherboard(String manufacturer, 
+		        		 					  String modelNa,
+		        		 					  String socket, 
+		        		 					  String expansion, 
+		        		 					  String form, 
+		        		 					  String price));
+		         tx.commit();
+		      } catch (HibernateException e) {
+		         if (tx != null)
+		            tx.rollback();
+		         e.printStackTrace();
+		      } finally {
+		         session.close();
+		      }
+		   }
+
 
 }

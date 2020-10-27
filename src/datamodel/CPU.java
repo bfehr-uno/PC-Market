@@ -36,7 +36,12 @@ public class CPU {
 	public CPU() {
 	}
 
-	public CPU(Integer id, String manufacturer, String modelNa, String cores, String freq, String socketC, String price) {
+	public CPU(Integer id, 
+			   String manufacturer, 
+			   String modelNa, 
+			   String cores, 
+			   String freq, String socketC, 
+			   String price) {
 		this.id = id;
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
@@ -46,7 +51,12 @@ public class CPU {
 		this.price = price;
 	}
 
-	public CPU(String manufacturer, String modelNa, String cores, String freq, String socketC, String price) {
+	public CPU(String manufacturer, 
+			   String modelNa, 
+			   String cores, 
+			   String freq, 
+			   String socketC, 
+			   String price) {
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.numOfCores = cores;

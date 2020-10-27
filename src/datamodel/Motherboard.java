@@ -35,7 +35,13 @@ public class Motherboard {
 	public Motherboard() {
 	}
 	
-	public Motherboard(Integer id, String manufacturer, String modelNa, String socket, String expansion, String form, String price) {
+	public Motherboard(Integer id, 
+					   String manufacturer, 
+					   String modelNa, 
+					   String socket, 
+					   String expansion, 
+					   String form, 
+					   String price) {
 		this.id = id;
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
@@ -45,7 +51,12 @@ public class Motherboard {
 		this.price = price;
 	}
 	
-	public Motherboard(String manufacturer, String modelNa, String socket, String expansion, String form, String price) {
+	public Motherboard(String manufacturer, 
+					   String modelNa, 
+					   String socket, 
+					   String expansion, 
+					   String form, 
+					   String price) {
 		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.socketType = socket;
