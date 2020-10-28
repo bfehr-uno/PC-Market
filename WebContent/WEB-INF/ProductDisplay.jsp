@@ -1,4 +1,5 @@
 <%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import="datamodel.CPU"%>
 <%@page import="datamodel.GPU"%>
 <%@page import="datamodel.Hard_Drive"%>
@@ -14,6 +15,7 @@
       <h1 align="center">PC-Market Product List</h1>
       <br>
       <h2 align="center">CPUs</h2>
+      <div style="width:600px; height:250px; overflow:auto; margin-left: auto; margin-right: auto;">
       	<table border ="1" width="500" align="center">
       		<tr bgcolor="FFFFFF">
       			<th><b>ID</b></th>
@@ -23,9 +25,10 @@
       			<th><b>Frequency</b></th> 
       			<th><b>Socket Type</b></th>
       			<th><b>Price</b></th>
+      			<th><b>Buy</b></th>
    			</tr> 
 	         
-			<%ArrayList<CPU> cpu =  (ArrayList<CPU>)request.getAttribute("cpus");
+			<%List<CPU> cpu =  (List<CPU>)request.getAttribute("cpus");
 			
 			for(CPU c : cpu){%>
 			<tr>
@@ -36,9 +39,13 @@
 				<td><%=c.getFreq()%></td> 
 				<td><%=c.getSocketCompatibility()%></td>
 				<td><%=c.getPrice()%></td>
+				<td><form action="BuyServlet" method="post">
+					<button type="submit" name="id" value=<%=c.getId()%>>Buy</button>
+				</form>
 			</tr> 
 			<%}%>
 		</table>
+		</div>
         
         <br>
         <h3 align="center">GPUs</h3> 
@@ -53,7 +60,7 @@
 				<th><b>Price</b></th>
 			</tr> 
 		   
-			<%ArrayList<GPU> gpu =  (ArrayList<GPU>)request.getAttribute("gpus");
+			<%List<GPU> gpu =  (List<GPU>)request.getAttribute("gpus");
 			
 			for(GPU g : gpu){%> 
 			<tr>
@@ -80,7 +87,7 @@
 				<th><b>Price</b></th>
 			</tr> 
         
-			<%ArrayList<Hard_Drive> hd =  (ArrayList<Hard_Drive>)request.getAttribute("hds");
+			<%List<Hard_Drive> hd =  (List<Hard_Drive>)request.getAttribute("hds");
         
 			for(Hard_Drive h : hd){%> 
 			<tr>
@@ -108,7 +115,7 @@
 				<th><b>Price</b></th>
 			</tr> 
        
-       		<%ArrayList<Motherboard> mobo =  (ArrayList<Motherboard>)request.getAttribute("mobos");
+       		<%List<Motherboard> mobo =  (List<Motherboard>)request.getAttribute("mobos");
         
 			for(Motherboard m : mobo){%> 
 			<tr> 
