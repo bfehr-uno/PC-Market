@@ -219,5 +219,27 @@ public class UtilDBPCMarket {
 		      }
 		   }
 
+	   public Integer findNextCPUIndex() {
+			String query = "select count(*) from Listing";
 
+	        Session session = UtilDB.getSessionFactory().openSession();
+	        Transaction tx = null;
+	        
+	        int numListings = 0;
+
+	        try {
+	        	tx = session.beginTransaction();
+	        	List<?> queryResult = session.createQuery(query).list();
+	        	numListings = ((Long) queryResult.get(0)).intValue();
+	        	tx.commit();
+	        } catch (HibernateException e) {
+	        	if (tx != null)
+	        		tx.rollback();
+	        	e.printStackTrace();
+		    } finally {
+		    	session.close();
+		    }
+	        
+		    return numListings;
+		}
 }
