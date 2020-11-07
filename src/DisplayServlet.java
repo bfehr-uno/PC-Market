@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import datamodel.All_Listings;
 import datamodel.CPU;
 import datamodel.GPU;
 import datamodel.Hard_Drive;
@@ -21,6 +22,7 @@ import util.UtilDBPCMarket;
  */
 @WebServlet("/DispalyServlet")
 public class DisplayServlet extends HttpServlet {
+	List<All_Listings> allList = UtilDBPCMarket.listAllListings();
 	List<CPU> cpus = UtilDBPCMarket.listCPU();
 	List<GPU> gpus = UtilDBPCMarket.listGPU();
 	List<Hard_Drive> hds = UtilDBPCMarket.listHardDrive();
@@ -64,6 +66,7 @@ public class DisplayServlet extends HttpServlet {
 			out.println("</head>"); 
 			out.println("<body>");
 			
+			request.setAttribute("allList", allList);
 			request.setAttribute("cpus", cpus);
 			request.setAttribute("gpus", gpus);
 			request.setAttribute("hds", hds);

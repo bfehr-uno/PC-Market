@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import datamodel.All_Listings;
 import datamodel.Motherboard;
 import datamodel.CPU;
 import datamodel.GPU;
@@ -24,6 +25,22 @@ public class PCMarketServlet extends HttpServlet {
 
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	   response.setContentType("text/html");
+	   
+	   UtilDBPCMarket.createAll_Listings("Core i7-9700K", "CPU", "$250");
+	   UtilDBPCMarket.createAll_Listings("Ryzen 7 3800XT", "CPU", "$350");
+	   UtilDBPCMarket.createAll_Listings("Core i9-9900K", "CPU", "$350");
+	   
+	   UtilDBPCMarket.createAll_Listings("RTX 2080 Super Gaming X TRIO", "GPU", "$1000");
+	   UtilDBPCMarket.createAll_Listings("GV-N2060OC-6GD ver 2.0", "GPU", "$280");
+	   UtilDBPCMarket.createAll_Listings("RX 5700 XT GAMING X", "GPU", "$350");
+	   
+	   UtilDBPCMarket.createAll_Listings("ST2000DL004", "Hard Drive", "$250");
+	   UtilDBPCMarket.createAll_Listings("HD154UI", "Hard Drive", "$60");
+	   UtilDBPCMarket.createAll_Listings("WPC101200GSAS-G7", "Hard Drive", "$75");
+	   
+	   UtilDBPCMarket.createAll_Listings("MPG Z490 GAMING EDGE WIFII", "Motherboard", "$180");
+	   UtilDBPCMarket.createAll_Listings("STRIX Z490-E GAMING", "Motherboard", "$225");
+	   UtilDBPCMarket.createAll_Listings("Z390 AORUS PRO WIFI", "Motherboard", "$350");
 	   
 	   UtilDBPCMarket.createCPUs("Intel", "Core i7-9700K", "8-Core", 
 			   					 "4.9 GHz", "LGA 1151 (300 Series)", "$250");
@@ -73,6 +90,19 @@ public class PCMarketServlet extends HttpServlet {
 			   	   "<body bgcolor=\"#f0f0f0\">\n" + //
 			   	   "<h1 align=\"center\">" + title + "</h1>\n");
 	   out.println("<ul>");
+	   
+	   List<All_Listings> allList = UtilDBPCMarket.listAllListings();
+	   for (All_Listings lists : allList) {
+		   System.out.println("[DBG] " + lists.getId() + ", " //
+				   			  + lists.getModelName() + ", " //
+				   			  + lists.getPartType() + ", " //
+				   			  + lists.getPrice());
+		   
+		   out.println("<li>" + lists.getId() + ", " //
+				   			  + lists.getModelName() + ", " //
+				   			  + lists.getPartType() + ", " //
+				   			  + lists.getPrice());
+	   }
 	   
 	   List<Motherboard> listMobos = UtilDBPCMarket.listMotherboard();
 	   for (Motherboard mobos : listMobos) {

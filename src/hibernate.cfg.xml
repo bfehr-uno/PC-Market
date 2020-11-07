@@ -11,6 +11,7 @@
 		<property name="hibernate.connection.password">Groovy</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="show_sql">false</property>
+		<mapping class="datamodel.All_Listings" />
 		<mapping class="datamodel.CPU"/>
 		<mapping class="datamodel.GPU"/>
 		<mapping class="datamodel.Hard_Drive"/>
