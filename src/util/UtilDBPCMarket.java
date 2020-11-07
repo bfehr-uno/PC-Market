@@ -11,6 +11,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 import datamodel.Motherboard;
+import datamodel.All_Listings;
 import datamodel.CPU;
 import datamodel.GPU;
 import datamodel.Hard_Drive;
@@ -34,6 +35,30 @@ public class UtilDBPCMarket {
 				.applySettings(configuration.getProperties());
 		sessionFactory = configuration.buildSessionFactory(builder.build());
 		return sessionFactory;
+	}
+	
+	public static List<All_Listings> listAllListings() {
+		List<All_Listings> resultList = new ArrayList<All_Listings>();
+
+		Session session = getSessionFactory().openSession();
+		Transaction tx = null;
+
+		try {
+			tx = session.beginTransaction();
+			List<?> All_Listings = session.createQuery("FROM All_Listings").list();
+			for (Iterator<?> iterator = All_Listings.iterator(); iterator.hasNext();) {
+				All_Listings allListings = (All_Listings) iterator.next();
+				resultList.add(allListings);
+			}
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return resultList;
 	}
 
 	public static List<Motherboard> listMotherboard() {
@@ -132,6 +157,24 @@ public class UtilDBPCMarket {
 		return resultList;
 	}
 	
+	public static void createAll_Listings(String modelNa,
+								  String partTy,
+								  String price) {
+		Session session = getSessionFactory().openSession();
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+			session.save(new All_Listings(modelNa, partTy, price));
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+	}
+	
 	public static void createCPUs(String manufacturer, 
 								  String modelNa, 
 								  String cores, 
@@ -219,18 +262,25 @@ public class UtilDBPCMarket {
 		      }
 		   }
 
-	   public Integer findNextCPUIndex() {
-			String query = "select count(*) from Listing";
+	   public List<Integer> findNextCPUIndex() {
+			String query = "SELECT Part_id from Listing";
 
-	        Session session = UtilDB.getSessionFactory().openSession();
+	        Session session = getSessionFactory().openSession();
 	        Transaction tx = null;
 	        
-	        int numListings = 0;
+	        List<Integer> numListings = new ArrayList<Integer>();
 
 	        try {
 	        	tx = session.beginTransaction();
 	        	List<?> queryResult = session.createQuery(query).list();
-	        	numListings = ((Long) queryResult.get(0)).intValue();
+	        	for (int i = 0; i < queryResult.size(); i++) {
+	        		numListings.add(((Long) queryResult.get(i)).intValue());
+
+	        	    if (i == (queryResult.size() - 1)) {
+	        	        // Last item...
+	        	    }
+	        	}
+	        	
 	        	tx.commit();
 	        } catch (HibernateException e) {
 	        	if (tx != null)
