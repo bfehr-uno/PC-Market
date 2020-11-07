@@ -1,5 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
+<%@page import="datamodel.All_Listings"%>
 <%@page import="datamodel.CPU"%>
 <%@page import="datamodel.GPU"%>
 <%@page import="datamodel.Hard_Drive"%>
@@ -129,6 +130,29 @@
 			</tr> 
 			<%}%>
 		</table>
+		
+		<br>
+        <h6 align="center">All Listings</h6> 
+        <table border ="1" width="500" align="center">
+			<tr bgcolor="FFFFFF">
+				<th><b>ID</b></th> 
+				<th><b>Model Name</b></th> 
+				<th><b>Part Type</b></th> 
+				<th><b>Price</b></th>
+			</tr> 
+		   
+			<%List<All_Listings> allList =  (List<All_Listings>)request.getAttribute("allList");
+			
+			for(All_Listings a : allList){%> 
+			<tr>
+				<td><%=a.getId()%></td>
+				<td><%=a.getModelName()%></td> 
+				<td><%=a.getPartType()%></td>
+				<td><%=a.getPrice()%></td>
+			</tr> 
+			<%}%> 
+		</table>
+        <br>
         <hr/> 
     </body> 
 </html> 
