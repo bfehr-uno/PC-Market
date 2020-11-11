@@ -109,6 +109,7 @@ public class UtilDBPCMarket {
 		return resultList;
 	}
 	
+	
 	public static List<GPU> listGPU() {
 		List<GPU> resultList = new ArrayList<GPU>();
 
@@ -132,7 +133,7 @@ public class UtilDBPCMarket {
 		}
 		return resultList;
 	}
-
+	
 	public static List<Hard_Drive> listHardDrive() {
 		List<Hard_Drive> resultList = new ArrayList<Hard_Drive>();
 
@@ -173,6 +174,18 @@ public class UtilDBPCMarket {
 		} finally {
 			session.close();
 		}
+	}
+	
+	public static All_Listings searchAllListings(String partType, String modelName) {
+		All_Listings item = null;
+		List<All_Listings> items = listAllListings();
+		for(All_Listings i : items) {
+			if(partType.compareTo(i.getPartType()) == 0 && modelName.compareTo(i.getModelName()) == 0) {
+				item = i;
+				break;
+			}
+		}
+		return item;
 	}
 	
 	public static void createCPUs(String manufacturer, 
