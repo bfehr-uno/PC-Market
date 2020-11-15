@@ -21,69 +21,53 @@
 			
 			if (partType.equals("CPU")) {
 				CPU cpu = UtilDBPCMarket.getCPU(id);
-				ArrayList<String> attributes = cpu.getAttributes();
 				%>
-				<div class="attributes">
-				<%
-				for (String attribute : attributes) {%>
-					<div class="attribute"><%=attribute%></div>
-				<%
-				}%>
+				<div class="leftside">
+					<div class="cpu-model"><%=cpu.getManufacturer() + " " + cpu.getModelName()%></div>
+					<div class="cpu-cores">Number of Cores: <%=cpu.getNumOfCores() %></div>
+					<div class="cpu-freq">Frequency: <%=cpu.getFreq()%> gHz</div>
+					<div class="cpu-socket">Socket Compatibility: <%=cpu.getSocketCompatibility() %></div>
 				</div>
-				<div>
-					<div><img class="part" src="photos/genericcpu.jpg"></div>
-					<div><%=cpu.getPrice() %><a href="PurchaseConfirmation.jsp?listinginfo=<%=id + ',' + cpu.getModelName() + ',' + partType + ',' + cpu.getPrice()%>"><button>purchase</button></a></div>
+				<div class="rightside">
+					<div class="image"><img class="part" src="photos/genericcpu.jpg"></div>
+					<div class="purchase"><%=cpu.getPrice() %><a href="PurchaseConfirmation.jsp?listinginfo=<%=id + ',' + cpu.getModelName() + ',' + partType + ',' + cpu.getPrice()%>"><button>purchase</button></a></div>
 				</div>
 			<%
 			} else if (partType.equals("GPU")) {
 				GPU gpu = UtilDBPCMarket.getGPU(id);%>
-				<% 
-				ArrayList<String> attributes = gpu.getAttributes();
-				%>
-				<div class="attributes">
-				<%
-				for (String attribute : attributes) {%>
-					<div class="attribute"><%=attribute%></div>
-				<%
-				}%>
+				<div class="leftside">
+					<div class="gpu-model"><%=gpu.getManufacturer() + " " + gpu.getModelName()%></div>
+					<div class="gpu-clockspeed">Clock Speed: <%=gpu.getClockSpeed() %></div>
+					<div class="gpu-interface">Interface Type: <%=gpu.getInterfaceType()%></div>
+					<div class="gpu-memory">Memory Size: <%=gpu.getMemorySize() %></div>
 				</div>
-				<div>
-					<div><img class="part" src="photos/genericgpu.jpg"></div>
-					<div><%=gpu.getPrice() %><a href="PurchaseConfirmation.jsp?listinginfo=<%=id + ',' + gpu.getModelName() + ',' + partType + ',' + gpu.getPrice()%>"><button>purchase</button></a></div>
+				<div class="rightside">
+					<div class="image"><img class="part" src="photos/genericgpu.jpg"></div>
+					<div class="purchase"><%=gpu.getPrice() %><a href="PurchaseConfirmation.jsp?listinginfo=<%=id + ',' + gpu.getModelName() + ',' + partType + ',' + gpu.getPrice()%>"><button>purchase</button></a></div>
 				</div>
 			<%
 			} else if (partType.equals("Hard Drive")) {
 				Hard_Drive hardDrive = UtilDBPCMarket.getHardDrive(id);%>
-				<% 
-				ArrayList<String> attributes = hardDrive.getAttributes();
-				%>
-				<div class="attributes">
-				<%
-				for (String attribute : attributes) {%>
-					<div class="attribute"><%=attribute%></div>
-				<%
-				}%>
+				<div class="leftside">
+					<div class="harddrive-model"><%=hardDrive.getManufacturer() + " " + hardDrive.getModelName()%></div>
+					<div class="harddrive-storage">Storage Space: <%=hardDrive.getStorageSpace() %></div>
+					<div class="harddrive-rpm">Rotations per Minute: <%=hardDrive.getRotationsPerMinute()%> gHz</div>
 				</div>
-				<div>
-					<div><img class="part" src="photos/genericharddrive.jpg"></div>
-					<div><%=hardDrive.getPrice() %><a href="PurchaseConfirmation.jsp?listinginfo=<%=id + ',' + hardDrive.getModelName() + ',' + partType + ',' + hardDrive.getPrice()%>"><button>purchase</button></a></div>
+				<div class="rightside">
+					<div class="image"><img class="part" src="photos/genericharddrive.jpg"></div>
+					<div class="purchase"><%=hardDrive.getPrice() %><a href="PurchaseConfirmation.jsp?listinginfo=<%=id + ',' + hardDrive.getModelName() + ',' + partType + ',' + hardDrive.getPrice()%>"><button>purchase</button></a></div>
 				</div>
 			<%
 			} else {
 				Motherboard motherboard = UtilDBPCMarket.getMotherboard(id);%>
-				<% 
-				ArrayList<String> attributes = motherboard.getAttributes();
-				%>
-				<div class="attributes">
-				<%
-				for (String attribute : attributes) {%>
-					<div class="attribute"><%=attribute%></div>
-				<%
-				}%>
+				<div class="leftside">
+					<div class="motherboard-model"><%=motherboard.getManufacturer() + " " + motherboard.getModelName()%></div>
+					<div class="motherboard-socket">Socket Type: <%=motherboard.getSocket() %></div>
+					<div class="motherboard-expansion">Expansion Slots: <%=motherboard.getExpansionSlots()%> gHz</div>
 				</div>
-				<div>
-					<div><img class="part" src="photos/genericmotherboard.jpg"></div>
-					<div><%=motherboard.getPrice() %><a href="PurchaseConfirmation.jsp?listinginfo=<%=id + ',' + motherboard.getModelName() + ',' + partType + ',' + motherboard.getPrice()%>"><button>purchase</button></a></div>
+				<div class="rightside">
+					<div class="image"><img class="part" src="photos/genericmotherboard.jpg"></div>
+					<div class="purchase"><%=motherboard.getPrice() %><a href="PurchaseConfirmation.jsp?listinginfo=<%=id + ',' + motherboard.getModelName() + ',' + partType + ',' + motherboard.getPrice()%>"><button>purchase</button></a></div>
 				</div>
 			<%}%>
 		</div>

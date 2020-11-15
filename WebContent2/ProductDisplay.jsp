@@ -8,7 +8,6 @@
 	<title>Product List</title> 
 </head>  
 <body>
-	
 	<jsp:include page="MenuBar.jsp" />
 	<div class="listings">
 		<ul>

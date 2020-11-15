@@ -20,20 +20,156 @@ html {
 }
 
 .listing {
-	height: 100%;
+	height: 642px;
 	width: 800px;
 	display: flex;
 	flex-direction: row;
 }
 
-.attributes {
+.leftside {
 	height: 100%;
 	width: 50%;
 	display: flex;
 	flex-direction: column;
 }
 
+.cpu-model {
+	height: 25%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left:20px;
+ }
+
+.cpu-cores {
+	height: 25%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left:20px;
+}
+
+.cpu-freq {
+	height: 25%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left:20px;
+}
+
+.cpu-socket {
+	height: 25%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left:20px;
+}
+
+.gpu-model {
+	height: 25%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left:20px;
+}
+
+.gpu-clockspeed {
+	height: 25%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left:20px;
+}
+
+.gpu-interface {
+	height: 25%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left:20px;
+}
+
+.gpu-memory {
+	height: 25%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left:20px;
+}
+
+.harddrive-model {
+	height: 33%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left:20px;
+}
+
+.harddrive-storage {
+	height: 33%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+}
+
+.harddrive-rpm {
+	height: 33%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+}
+
+.motherboard-model {
+	height: 33%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+}
+
+.motherboard-socket {
+	height: 33%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+}
+
+.motherboard-expansion {
+	height: 33%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+}
+
+.rightside {
+	height: 100%;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.image {
+	height: 75%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.purchase {
+	height: 25%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
 img {
-	height: 100px;
-	width: 100px;
+	height: 250px;
+	width: 250px;
 }

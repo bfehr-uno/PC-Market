@@ -30,6 +30,10 @@
 	font-size: 24px;
 }
 
+.logo_container a {
+	color: black;	
+}
+
 .filler {
 	width: 33%;
 }

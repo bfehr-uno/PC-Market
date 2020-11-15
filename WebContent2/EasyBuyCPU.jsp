@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/EasyBuy.css">
 </head>
 <body>
+	<jsp:include page="MenuBar.jsp" />
 	<div class="container">
 		<form action="EasyBuyCPUResult.jsp">
 			<div><label>Number of Cores: </label><input type="text" name="cores"></div>

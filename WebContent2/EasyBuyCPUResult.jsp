@@ -10,6 +10,7 @@
 		<title>Insert title here</title>
 		<link rel="stylesheet" type="text/css" href="css/EasyBuyResult.css">
 	</head>
+	<jsp:include page="MenuBar.jsp" />
 	<div class="listings">
 		<ul>
 			<%
@@ -17,6 +18,7 @@
 			String freq = request.getParameter("frequency");
 			String socket = request.getParameter("socket");
 			List<CPU> cpus = UtilDBPCMarket.easyBuyCPU(cores, freq, socket);
+			System.out.println("hello");
 			
 			for (CPU cpu : cpus) {
 				String price = cpu.getPrice();

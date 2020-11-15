@@ -10,7 +10,7 @@
 <body>
 	<div class="header">
 		<div class="inner_header">
-			<div class="logo_container">PC Market</div>
+			<div class="logo_container"><a href="ProductDisplay.jsp" style="color: black;">PC Market</a></div>
 			<div class="filler"></div>
 			<div class="navigation">
 				<div class="sell"> 

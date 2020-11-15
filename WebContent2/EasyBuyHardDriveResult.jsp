@@ -10,6 +10,7 @@
 		<title>Insert title here</title>
 		<link rel="stylesheet" type="text/css" href="css/EasyBuyResult.css">
 	</head>
+	<jsp:include page="MenuBar.jsp" />
 	<div class="listings">
 		<ul>
 			<%
