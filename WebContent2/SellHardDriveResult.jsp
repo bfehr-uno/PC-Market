@@ -6,10 +6,9 @@
 <%
 String manufacturer = request.getParameter("manufacturer");
 String model = request.getParameter("model");
-String frequency = request.getParameter("frequency");
-String cores = request.getParameter("cores");
-String socket = request.getParameter("socket");
-String dataPoints = UtilDBPCMarket.getCPUDataPoints(frequency, cores, socket);
+String storage = request.getParameter("storage");
+String rpm = request.getParameter("rpm");
+String dataPoints = UtilDBPCMarket.getHardDriveDataPoints(rpm, storage);
 %>
 <!DOCTYPE html>
 <html>
@@ -33,7 +32,7 @@ String dataPoints = UtilDBPCMarket.getCPUDataPoints(frequency, cores, socket);
 		},
 		data: [{
 			type: "line",
-			yValueFormatString: "$#,##0",
+			yValueFormatString: "#,##0mn tonnes",
 			dataPoints : <%out.print(dataPoints);%>
 		}]
 	});
@@ -51,12 +50,11 @@ String dataPoints = UtilDBPCMarket.getCPUDataPoints(frequency, cores, socket);
 	<div class="price" style="width: 100%; display: flex; justify-content: center;">
 		<form action="SellConfirmation.jsp">
 			<label>Your Price: </label><input type="text" name="price">
-			<input type="hidden" name="type" value="CPU">
+			<input type="hidden" name="type" value="Hard Drive">
 			<input type="hidden" name="manufacturer" value="<%=manufacturer %>">
 			<input type="hidden" name="model" value="<%=model %>">
-			<input type="hidden" name="frequency" value="<%=frequency %>">
-			<input type="hidden" name="cores" value="<%=cores %>">
-			<input type="hidden" name="socket" value="<%=socket %>">
+			<input type="hidden" name="storage" value="<%=storage %>">
+			<input type="hidden" name="rpm" value="<%=rpm %>">
 			<input type="submit" value="Sell">
 		</form>
 	</div>

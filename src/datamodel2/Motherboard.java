@@ -92,15 +92,6 @@ public class Motherboard {
 		this.price = price;
 	}
 	
-	public ArrayList<String> getAttributes() {
-		ArrayList<String> attributes = new ArrayList<String>();
-		attributes.add(manufacturer);
-		attributes.add(modelName);
-		attributes.add(socketType);
-		attributes.add(expansionSlots);
-		return attributes;
-	}
-	
 	@Override
 	public String toString() {
 		return "Motherboard:" + this.id + ", " + this.manufacturer + ", " +

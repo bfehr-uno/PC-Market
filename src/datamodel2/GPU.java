@@ -105,16 +105,6 @@ public class GPU{
 		this.price = price;
 	}
 	
-	public ArrayList<String> getAttributes() {
-		ArrayList<String> attributes = new ArrayList<String>();
-		attributes.add(manufacturer);
-		attributes.add(modelName);
-		attributes.add(clockSpeed);
-		attributes.add(interfaceType);
-		attributes.add(memorySize);
-		return attributes;
-	}
-	
 	@Override
 	public String toString() {
 		return "GPU:" + this.id + ", " + this.manufacturer + ", " +

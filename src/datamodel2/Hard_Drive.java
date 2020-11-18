@@ -92,15 +92,6 @@ public class Hard_Drive {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	
-	public ArrayList<String> getAttributes() {
-		ArrayList<String> attributes = new ArrayList<String>();
-		attributes.add(manufacturer);
-		attributes.add(modelName);
-		attributes.add(storageSpace);
-		attributes.add(rotationsPerMinute);
-		return attributes;
-	}
 
 	@Override
 	public String toString() {

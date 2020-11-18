@@ -104,16 +104,6 @@ public class CPU {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	
-	public ArrayList<String> getAttributes() {
-		ArrayList<String> attributes = new ArrayList<String>();
-		attributes.add(manufacturer);
-		attributes.add(modelName);
-		attributes.add(numOfCores);
-		attributes.add(frequency);
-		attributes.add(socketCompatibility);
-		return attributes;
-	}
 
 	@Override
 	public String toString() {

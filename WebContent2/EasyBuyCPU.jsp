@@ -10,10 +10,10 @@
 <body>
 	<jsp:include page="MenuBar.jsp" />
 	<div class="container">
-		<form action="EasyBuyCPUResult.jsp">
-			<div><label>Number of Cores: </label><input type="text" name="cores"></div>
-			<div><label>Frequency: </label><input type="text" name="frequency"></div>
-			<div><label>Socket Compatibility</label><input type="text" name="socket"></div>
+		<form class="attribute-form" action="EasyBuyCPUResult.jsp" style="height: 100%; width: 800px; display: flex; flex-direction: column; align-items: center;">
+			<div class="field" style="height: 160.5px; width: 60%; display: flex; align-items: center; justify-content: space-between;"><label>Number of Cores: </label><input type="text" name="cores"></div>
+			<div class="field" style="height: 160.5px; width: 60%; display: flex; align-items: center; justify-content: space-between;"><label>Frequency: </label><input type="text" name="frequency"></div>
+			<div class="field" style="height: 160.5px; width: 60%; display: flex; align-items: center; justify-content: space-between;"><label>Socket Compatibility</label><input type="text" name="socket"></div>
 			<div class="submit"><input type="submit" value="Search"></div>
 		</form>
 	</div>

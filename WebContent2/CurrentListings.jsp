@@ -13,7 +13,6 @@
 		<ul>
 			<%
 			UtilDBPCMarket.setupDB();
-			UtilDBPCMarket.setupDB();
 			List<Listing> listings = UtilDBPCMarket.listListings();
 			
 			for (Listing listing : listings) {
@@ -22,7 +21,7 @@
 				String id = listing.getID().toString();
 				String modelName = listing.getModelName();
 				String price = listing.getPrice();
-				
+								
 				if (partType.equals("CPU")) {
 					imgSrc = "photos/genericcpu.jpg";
 				}

@@ -10,9 +10,9 @@
 <body>	
 	<jsp:include page="MenuBar.jsp" />
 	<div class="container">
-		<form action="EasyBuyHardDriveResult.jsp">
-			<div><label>Storage Space: </label><input type="text" name="storage"></div>
-			<div><label>Rotations per Minute: </label><input type="text" name="rpm"></div>
+		<form action="EasyBuyHardDriveResult.jsp" style="height: 100%; width: 800px; display: flex; flex-direction: column; align-items: center;">
+			<div class="field" style="height: 214px; width: 60%; display: flex; align-items: center; justify-content: space-between;"><label>Storage Space: </label><input type="text" name="storage"></div>
+			<div class="field" style="height: 214px; width: 60%; display: flex; align-items: center; justify-content: space-between;"><label>Rotations per Minute: </label><input type="text" name="rpm"></div>
 			<div class="submit"><input type="submit" value="Search"></div>
 		</form>
 	</div>

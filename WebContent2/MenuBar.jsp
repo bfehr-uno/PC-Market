@@ -10,14 +10,14 @@
 <body>
 	<div class="header">
 		<div class="inner_header">
-			<div class="logo_container"><a href="ProductDisplay.jsp" style="color: black;">PC Market</a></div>
+			<div class="logo_container"><a href="CurrentListings.jsp" style="color: black;">PC Market</a></div>
 			<div class="filler"></div>
 			<div class="navigation">
 				<div class="sell"> 
 					<div class="text" >Sell</div>
 				  	<div class="dropdown-content">
 				  		<div><a href="SellCPU.jsp">CPU</a></div>
-				  		<div><a href="SellGPU.jsp">MotherBoard</a></div>
+				  		<div><a href="SellGPU.jsp">GPU</a></div>
 				  		<div><a href="SellHardDrive.jsp">Hard Drive</a></div>
 				  		<div><a href="SellMotherboard.jsp">Motherboard</a></div>
 				  	</div>

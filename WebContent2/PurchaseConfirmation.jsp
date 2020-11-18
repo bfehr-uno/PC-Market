@@ -16,6 +16,6 @@
 	String price = listingInfo[3];
 	UtilDBPCMarket.removeListing(id, partType);
 	%>
-	<p>You have successfully purchased <%=modelName%> for $<%=price%>.<p>
-	<a href="ProductDisplay.jsp"><button>Home</button></a>
+	<p>You have purchased <%=modelName%> for $<%=price%>.<p>
+	<a href="CurrentListings.jsp"><button>View Current Listings</button></a>
 </html>
