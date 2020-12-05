@@ -30,15 +30,23 @@ public class Sold_CPU {
 	@Column(name = "date_sold")
 	private String dateSold;
 	
+	@Column(name = "sellerID")
+	private Integer sellerID;
+	
+	@Column(name = "buyerID")
+	private Integer buyerID;
+	
 	public Sold_CPU() {
 	}
 	
-	public Sold_CPU(String frequency, String cores, String socket, String price, String dateSold) {
+	public Sold_CPU(String frequency, String cores, String socket, String price, String dateSold, Integer sellerID, Integer buyerID) {
 		this.frequency = frequency;
 		this.cores = cores;
 		this.socket = socket;
 		this.price = price;
 		this.dateSold = dateSold;
+		this.sellerID = sellerID;
+		this.buyerID = buyerID;
 	}
 	
 	public String getFrequency() {
@@ -59,5 +67,13 @@ public class Sold_CPU {
 	
 	public String getDateSold() {
 		return dateSold;
+	}
+	
+	public Integer getSellerID() {
+		return sellerID;
+	}
+	
+	public Integer getBuyerID() {
+		return buyerID;
 	}
 }

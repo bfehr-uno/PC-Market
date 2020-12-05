@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.*" %>
-<%@ page import="util2.UtilDBPCMarket"%>
+<%@ page import="util2.SellUtil"%>
 <%@ page import="datamodel2.*"%>
 <%
-String manufacturer = request.getParameter("manufacturer");
-String model = request.getParameter("model");
-String storage = request.getParameter("storage");
+String model = request.getParameter("modelName");
 String rpm = request.getParameter("rpm");
-String dataPoints = UtilDBPCMarket.getHardDriveDataPoints(rpm, storage);
+String storage = request.getParameter("storage");
+String dataPoints = SellUtil.getHardDrivesSoldJSON(rpm, storage);
 %>
 <!DOCTYPE html>
 <html>
@@ -51,10 +50,9 @@ String dataPoints = UtilDBPCMarket.getHardDriveDataPoints(rpm, storage);
 		<form action="SellConfirmation.jsp">
 			<label>Your Price: </label><input type="text" name="price">
 			<input type="hidden" name="type" value="Hard Drive">
-			<input type="hidden" name="manufacturer" value="<%=manufacturer %>">
-			<input type="hidden" name="model" value="<%=model %>">
-			<input type="hidden" name="storage" value="<%=storage %>">
+			<input type="hidden" name="modelName" value="<%=model %>">
 			<input type="hidden" name="rpm" value="<%=rpm %>">
+			<input type="hidden" name="storage" value="<%=storage %>">
 			<input type="submit" value="Sell">
 		</form>
 	</div>

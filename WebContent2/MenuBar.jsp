@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%
+Integer userID = (Integer) session.getAttribute("userID");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,28 +12,14 @@
 </head>
 <body>
 	<div class="header">
-		<div class="inner_header">
-			<div class="logo_container"><a href="CurrentListings.jsp" style="color: black;">PC Market</a></div>
-			<div class="filler"></div>
-			<div class="navigation">
-				<div class="sell"> 
-					<div class="text" >Sell</div>
-				  	<div class="dropdown-content">
-				  		<div><a href="SellCPU.jsp">CPU</a></div>
-				  		<div><a href="SellGPU.jsp">GPU</a></div>
-				  		<div><a href="SellHardDrive.jsp">Hard Drive</a></div>
-				  		<div><a href="SellMotherboard.jsp">Motherboard</a></div>
-				  	</div>
-				</div>
-				<div class="easyBuy">
-				  	<div class="text">Easy Buy</div>
-				  	<div class="dropdown-content">
-				  		<div><a href="EasyBuyCPU.jsp">CPU</a></div>
-				  		<div><a href="EasyBuyGPU.jsp">MotherBoard</a></div>
-				  		<div><a href="EasyBuyHardDrive.jsp">Hard Drive</a></div>
-				  		<div><a href="EasyBuyMotherboard.jsp">Motherboard</a></div>
-				  	</div>
-				</div>
+		<div class="inner-header">
+			<div class="logo-container"><a href="CurrentListings.jsp" style="color: black;">PC Market</a></div>
+			<div style="width: 50%; height: 100%; padding-right: 20px; display: flex; align-items: center; justify-content: flex-end;">
+				<% if (userID != null) {%>
+					<a href="Account.jsp" style="color: black">View Account</a>
+				<%} else {%>
+					<a href="Login.jsp" style="color: black">Login</a>
+				<%} %>
 	  		</div>
 		</div>
 	</div>

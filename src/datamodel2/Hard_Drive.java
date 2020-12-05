@@ -17,9 +17,6 @@ public class Hard_Drive {
 	@Column(name = "id")
 	private Integer id;
 	
-	@Column(name = "manufacturer")
-	private String manufacturer;
-	
 	@Column(name = "model_name")
 	private String modelName; 
 
@@ -31,34 +28,29 @@ public class Hard_Drive {
 	
 	@Column(name = "price")
 	private String price;
+	
+	@Column(name = "seller_id")
+	private Integer sellerID;
 
 	public Hard_Drive() {
 	}
 
 	public Hard_Drive(Integer id, 
-					  String manufacturer, 
 					  String modelNa, 
 					  String storage, 
 					  String rpm, 
-					  String price) {
+					  String price,
+					  Integer sellerID) {
 		this.id = id;
-		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.storageSpace = storage;
 		this.rotationsPerMinute = rpm;
 		this.price = price;
+		this.sellerID = sellerID;
 	}
 
 	public Integer getId() {
 		return id;
-	}
-
-	public String getManufacturer() {
-		return manufacturer;
-	}
-	
-	public void setManufacturer(String manufacturer) {
-		this.manufacturer = manufacturer;
 	}
 
 	public String getModelName() {
@@ -92,10 +84,14 @@ public class Hard_Drive {
 	public void setPrice(String price) {
 		this.price = price;
 	}
+	
+	public Integer getSellerID() {
+		return sellerID;
+	}
 
 	@Override
 	public String toString() {
-		return "Hard Drive:" + this.id + ", " + this.manufacturer + ", " +
+		return "Hard Drive:" + this.id + ", " +
 				this.modelName + ", " + this.storageSpace + ", " + 
 				this.rotationsPerMinute + ", " + this.price;
 	}

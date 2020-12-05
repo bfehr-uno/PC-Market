@@ -28,14 +28,22 @@ public class Sold_Motherboard {
 	@Column(name = "date_sold")
 	private String dateSold;
 	
+	@Column(name = "sellerID")
+	private Integer sellerID;
+	
+	@Column(name = "buyerID")
+	private Integer buyerID;
+	
 	public Sold_Motherboard() {
 	}
 	
-	public Sold_Motherboard(String expansionSlots, String socket, String price, String dateSold) {
+	public Sold_Motherboard(String expansionSlots, String socket, String price, String dateSold, Integer sellerID, Integer buyerID) {
 		this.expansionSlots = expansionSlots;
 		this.socket = socket;
 		this.price = price;
 		this.dateSold = dateSold;
+		this.sellerID = sellerID;
+		this.buyerID = buyerID;
 	}
 	
 	public String getExpansionSlots() {
@@ -52,5 +60,13 @@ public class Sold_Motherboard {
 	
 	public String getDateSold() {
 		return dateSold;
+	}
+	
+	public Integer getSellerID() {
+		return sellerID;
+	}
+	
+	public Integer getBuyerID() {
+		return buyerID;
 	}
 }

@@ -23,16 +23,21 @@ public class Listing {
 	
 	@Column(name = "price")
 	private String price;
+	
+	@Column(name = "sellerID")
+	private Integer sellerID;
 
 	public Listing() {
 	}
 
 	public Listing(String modelNa,
 						String partTy,
-						String price) {
+						String price,
+						Integer sellerID) {
 		this.modelName = modelNa;
 		this.part_Type = partTy;
 		this.price = price;
+		this.sellerID = sellerID;
 	}
 	
 	public Integer getID() {
@@ -61,6 +66,10 @@ public class Listing {
 	
 	public void setPrice(String price) {
 		this.price = price;
+	}
+	
+	public Integer getSellerID() {
+		return sellerID;
 	}
 	
 	@Override

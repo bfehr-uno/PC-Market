@@ -16,9 +16,6 @@ public class GPU{
 	@Column(name = "id")
 	private Integer id;
 	
-	@Column(name = "manufacturer")
-	private String manufacturer;
-	
 	@Column(name = "model_name")
 	private String modelName; 
 	
@@ -34,35 +31,30 @@ public class GPU{
 	@Column(name = "price")
 	private String price;
 	
+	@Column(name = "seller_id")
+	private Integer sellerID;
+	
 	public GPU() {
 	}
 	
 	public GPU(Integer id, 
-			   String manufacturer, 
 			   String modelNa,
 			   String clockSpeed,
 			   String interf, 
 			   String memory, 
-			   String price) {
+			   String price,
+			   Integer sellerID) {
 		this.id = id;
-		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.clockSpeed = clockSpeed;
 		this.interfaceType = interf;
 		this.memorySize = memory;
 		this.price = price;
+		this.sellerID = sellerID;
 	}
 	
 	public Integer getId() {
 		return id;
-	}
-	
-	public String getManufacturer() {
-		return manufacturer;
-	}
-	
-	public void setManufacturer(String manufacturer) {
-		this.manufacturer = manufacturer;
 	}
 	
 	public String getModelName() {
@@ -105,9 +97,13 @@ public class GPU{
 		this.price = price;
 	}
 	
+	public Integer getSellerID() {
+		return sellerID;
+	}
+	
 	@Override
 	public String toString() {
-		return "GPU:" + this.id + ", " + this.manufacturer + ", " +
+		return "GPU:" + this.id + ", " +
 			   this.modelName + ", " + this.interfaceType + ", " + 
 			   this.memorySize + ", " + this.price;
 	}

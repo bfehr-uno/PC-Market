@@ -6,7 +6,7 @@
 	<session-factory>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://ec2-18-208-135-219.compute-1.amazonaws.com:3306/PCMarketDB</property>
+		<property name="hibernate.connection.url">jdbc:mysql://ec2-3-80-209-96.compute-1.amazonaws.com:3306/PCMarketDB</property>
 		<!-- <property name="hibernate.connection.username">Michael</property>
 		<property name="hibernate.connection.password">Groovy</property> -->
 		<property name="hibernate.hbm2ddl.auto">update</property>

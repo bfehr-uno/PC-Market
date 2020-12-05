@@ -27,14 +27,22 @@ public class Sold_Hard_Drive {
 	@Column(name = "date_sold")
 	private String dateSold;
 	
+	@Column(name = "sellerID")
+	private Integer sellerID;
+	
+	@Column(name = "buyerID")
+	private Integer buyerID;
+	
 	public Sold_Hard_Drive() {
 	}
 	
-	public Sold_Hard_Drive(String rpm, String storage, String price, String dateSold) {
+	public Sold_Hard_Drive(String rpm, String storage, String price, String dateSold, Integer sellerID, Integer buyerID) {
 		this.rpm = rpm;
 		this.storage = storage;
 		this.price = price;
 		this.dateSold = dateSold;
+		this.sellerID = sellerID;
+		this.buyerID = buyerID;
 	}
 	
 	public String getRPM() {
@@ -51,5 +59,13 @@ public class Sold_Hard_Drive {
 	
 	public String getDateSold() {
 		return dateSold;
+	}
+	
+	public Integer getSellerID() {
+		return sellerID;
+	}
+	
+	public Integer getBuyerID() {
+		return buyerID;
 	}
 }

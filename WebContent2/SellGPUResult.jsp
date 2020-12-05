@@ -1,15 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.*" %>
-<%@ page import="util2.UtilDBPCMarket"%>
+pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.List" %>
+<%@ page import="util2.SellUtil"%>
 <%@ page import="datamodel2.*"%>
-<%
-String manufacturer = request.getParameter("manufacturer");
-String model = request.getParameter("model");
-String clockSpeed = request.getParameter("clockspeed");
+<% 
+String modelName = request.getParameter("modelName");
+String clockSpeed = request.getParameter("clockSpeed");
 String interf = request.getParameter("interf");
 String memory = request.getParameter("memory");
-String dataPoints = UtilDBPCMarket.getGPUDataPoints(clockSpeed, interf, memory);
+String dataPoints = SellUtil.getGPUsSoldJSON(clockSpeed, interf, memory);
 %>
 <!DOCTYPE html>
 <html>
@@ -33,7 +32,7 @@ String dataPoints = UtilDBPCMarket.getGPUDataPoints(clockSpeed, interf, memory);
 		},
 		data: [{
 			type: "line",
-			yValueFormatString: "#,##0mn tonnes",
+			yValueFormatString: "$#,##0",
 			dataPoints : <%out.print(dataPoints);%>
 		}]
 	});
@@ -43,7 +42,7 @@ String dataPoints = UtilDBPCMarket.getGPUDataPoints(clockSpeed, interf, memory);
 	</script>
 </head>
 <body>
- 	<jsp:include page="MenuBar.jsp" />
+	<jsp:include page="MenuBar.jsp" />
 	<div class="chart-container" style="width: 100%; display: flex; justify-content: center;">
 		<div id="chart" style="height: 370px; width: 800px;"></div>
 		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
@@ -52,8 +51,7 @@ String dataPoints = UtilDBPCMarket.getGPUDataPoints(clockSpeed, interf, memory);
 		<form action="SellConfirmation.jsp">
 			<label>Your Price: </label><input type="text" name="price">
 			<input type="hidden" name="type" value="GPU">
-			<input type="hidden" name="manufacturer" value="<%=manufacturer %>">
-			<input type="hidden" name="model" value="<%=model %>">
+			<input type="hidden" name="modelName" value="<%=modelName %>">
 			<input type="hidden" name="clockSpeed" value="<%=clockSpeed %>">
 			<input type="hidden" name="interf" value="<%=interf %>">
 			<input type="hidden" name="memory" value="<%=memory %>">

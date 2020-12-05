@@ -17,9 +17,6 @@ public class CPU {
 	@Column(name = "id")
 	private Integer id;
 	
-	@Column(name = "manufacturer")
-	private String manufacturer;
-	
 	@Column(name = "model_name")
 	private String modelName; 
 	
@@ -34,35 +31,30 @@ public class CPU {
 	
 	@Column(name = "price")
 	private String price;
+	
+	@Column(name = "seller_id")
+	private Integer sellerID;
 
 	public CPU() {
 	}
 
 	public CPU(Integer id, 
-			   String manufacturer, 
 			   String modelNa, 
 			   String cores, 
 			   String freq, String socketC, 
-			   String price) {
+			   String price,
+			   Integer sellerID) {
 		this.id = id;
-		this.manufacturer = manufacturer;
 		this.modelName = modelNa;
 		this.numOfCores = cores;
 		this.frequency = freq;
 		this.socketCompatibility = socketC;
 		this.price = price;
+		this.sellerID = sellerID;
 	}
 
 	public Integer getId() {
 		return id;
-	}
-	
-	public String getManufacturer() {
-		return manufacturer;
-	}
-	
-	public void setManufacturer(String manufacturer) {
-		this.manufacturer = manufacturer;
 	}
 
 	public String getModelName() {
@@ -104,10 +96,14 @@ public class CPU {
 	public void setPrice(String price) {
 		this.price = price;
 	}
+	
+	public Integer getSellerID() {
+		return sellerID;
+	}
 
 	@Override
 	public String toString() {
-		return "CPU(s):" + this.id + ", " + this.manufacturer + ", " + 
+		return "CPU(s):" + this.id + ", " + 
 			   this.modelName + ", " +  this.numOfCores  + ", " + 
 			   this.frequency + ", " + this.socketCompatibility + ", " + 
 			   this.price;

@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.*" %>
-<%@ page import="util2.UtilDBPCMarket"%>
+<%@ page import="util2.SellUtil"%>
 <%@ page import="datamodel2.*"%>
 <%
-String manufacturer = request.getParameter("manufacturer");
-String model = request.getParameter("model");
-String expansionSlots = request.getParameter("expansionslots");
+String model = request.getParameter("modelName");
 String socket = request.getParameter("socket");
-String dataPoints = UtilDBPCMarket.getMotherboardDataPoints(expansionSlots, socket);
+String expansion = request.getParameter("expansion");
+String dataPoints = SellUtil.getMotherboardsSoldJSON(expansion, socket);
 %>
 <!DOCTYPE html>
 <html>
@@ -43,18 +42,17 @@ String dataPoints = UtilDBPCMarket.getMotherboardDataPoints(expansionSlots, sock
 </head>
 <body>
 	<jsp:include page="MenuBar.jsp" />
-	<div class="chart-container" style="width: 100%; display: flex; justify-content: center;" >
+	<div class="chart-container" style="width: 100%; display: flex; justify-content: center;">
 		<div id="chart" style="height: 370px; width: 800px;"></div>
 		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	</div>
 	<div class="price" style="width: 100%; display: flex; justify-content: center;">
-		<form action="SellConfirmation.jsp" >
+		<form action="SellConfirmation.jsp">
 			<label>Your Price: </label><input type="text" name="price">
-			<input type="hidden" name="type" value="GPU">
-			<input type="hidden" name="manufacturer" value="<%=manufacturer %>">
-			<input type="hidden" name="model" value="<%=model %>">
-			<input type="hidden" name="expansionslots" value="<%=expansionSlots %>">
+			<input type="hidden" name="type" value="Motherboard">
+			<input type="hidden" name="modelName" value="<%=model %>">
 			<input type="hidden" name="socket" value="<%=socket %>">
+			<input type="hidden" name="expansion" value="<%=expansion %>">
 			<input type="submit" value="Sell">
 		</form>
 	</div>

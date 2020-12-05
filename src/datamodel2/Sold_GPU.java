@@ -30,15 +30,23 @@ public class Sold_GPU {
 	@Column(name = "date_sold")
 	private String dateSold;
 	
+	@Column(name = "sellerID")
+	private Integer sellerID;
+	
+	@Column(name = "buyerID")
+	private Integer buyerID;
+	
 	public Sold_GPU() {
 	}
 	
-	public Sold_GPU(String clockSpeed, String interf, String memory, String price, String dateSold) {
+	public Sold_GPU(String clockSpeed, String interf, String memory, String price, String dateSold, Integer sellerID, Integer buyerID) {
 		this.clockSpeed = clockSpeed;
 		this.interf = interf;
 		this.memory = memory;
 		this.price = price;
 		this.dateSold = dateSold;
+		this.sellerID = sellerID;
+		this.buyerID = buyerID;
 	}
 	
 	public String getClockSpeed() {
@@ -59,5 +67,13 @@ public class Sold_GPU {
 	
 	public String getDateSold() {
 		return dateSold;
+	}
+	
+	public Integer getSellerID() {
+		return sellerID;
+	}
+	
+	public Integer getBuyerID() {
+		return buyerID;
 	}
 }

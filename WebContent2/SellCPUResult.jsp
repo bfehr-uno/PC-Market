@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.*" %>
-<%@ page import="util2.UtilDBPCMarket"%>
+pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.List" %>
+<%@ page import="util2.SellUtil"%>
 <%@ page import="datamodel2.*"%>
-<%
-String manufacturer = request.getParameter("manufacturer");
-String model = request.getParameter("model");
-String frequency = request.getParameter("frequency");
+<% 
+Integer userID = (Integer) session.getAttribute("userID");
+String modelName = request.getParameter("modelName");
 String cores = request.getParameter("cores");
+String frequency = request.getParameter("frequency");
 String socket = request.getParameter("socket");
-String dataPoints = UtilDBPCMarket.getCPUDataPoints(frequency, cores, socket);
+String dataPoints = SellUtil.getCPUsSoldJSON(frequency, cores, socket);
 %>
 <!DOCTYPE html>
 <html>
@@ -49,15 +49,18 @@ String dataPoints = UtilDBPCMarket.getCPUDataPoints(frequency, cores, socket);
 		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	</div>
 	<div class="price" style="width: 100%; display: flex; justify-content: center;">
-		<form action="SellConfirmation.jsp">
-			<label>Your Price: </label><input type="text" name="price">
+		<form action="SellConfirmation.jsp" style="width: 800px; display: flex; flex-direction: column; align-items: center;">
+			<div><label>Your Price: </label><input type="text" name="price"></div>
 			<input type="hidden" name="type" value="CPU">
-			<input type="hidden" name="manufacturer" value="<%=manufacturer %>">
-			<input type="hidden" name="model" value="<%=model %>">
+			<input type="hidden" name="modelName" value="<%=modelName %>">
 			<input type="hidden" name="frequency" value="<%=frequency %>">
 			<input type="hidden" name="cores" value="<%=cores %>">
 			<input type="hidden" name="socket" value="<%=socket %>">
-			<input type="submit" value="Sell">
+			<% if (userID != null) {%>
+				<input type="submit" value="Sell">
+			<%} else {%>
+			<label>You must login first</label>
+			<%} %>
 		</form>
 	</div>
 </body>

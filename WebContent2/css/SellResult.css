@@ -9,29 +9,12 @@
 
 html {
 	height: 722px;
-	width: 1000px;
+	width: 1536px;
 }
 
 .container {
-	height: 100%;
-	width: 100%;
+	height: 80px;
+	width: 1000px;
 	display: flex;
 	justify-content: center;
-}
-
-.graph {
-	height: 80%;
-	width: 800px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.price {
-	height: 20%;
-	width: 800px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	
 }
