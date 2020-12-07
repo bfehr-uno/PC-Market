@@ -122,6 +122,9 @@ public class UtilDBPCMarket {
 	   } finally {
 		   session.close();
 	   }
+	   
+	   AccountsUtil.createUser("pcmarketuser1", "pcmarketuser1@gmail.com", "pcmarket");
+       AccountsUtil.createUser("pcmarketuser2", "pcmarketuser2@gmail.com", "pcmarket");
    }
    
    public static CPU getCPU(Integer partID) {
